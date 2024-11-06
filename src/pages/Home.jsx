@@ -6,7 +6,7 @@ import 'swiper/css';
 import 'swiper/css/navigation';
 import 'swiper/css/pagination';
 import 'swiper/css/scrollbar';
-import { A11y, Autoplay, Navigation, Pagination } from 'swiper/modules';
+import { Autoplay, Navigation } from 'swiper/modules';
 
 const Home = () => {
   const [movieList, setMovieList] = useState([]);
@@ -17,32 +17,19 @@ const Home = () => {
   return (
     <div className='mx-auto container'>
       <Swiper
-        slidesPerView={2}
+        slidesPerView={1}
         spaceBetween={20}
-        // centeredSlides={true}
         navigation
-        modules={[Navigation, Autoplay, A11y, Pagination]}
+        modules={[Navigation, Autoplay]}
         autoplay={{
           delay: 2500,
           disableOnInteraction: false,
         }}
         loop
         breakpoints={{
-          320: {
-            slidesPerView: 1,
-          },
-          640: {
-            slidesPerView: 2,
-          },
-          768: {
-            slidesPerView: 3,
-          },
-          1024: {
-            slidesPerView: 4,
-          },
-          1280: {
-            slidesPerView: 5,
-          },
+          320: { slidesPerView: 1 },
+          768: { slidesPerView: 3 },
+          1280: { slidesPerView: 5 },
         }}
       >
         {movieList &&

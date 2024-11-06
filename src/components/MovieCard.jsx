@@ -11,13 +11,13 @@ const MovieCard = ({
     navigate(`/detail/${id}`);
   };
   return (
-    <article className='border border-zinc-300'>
+    <article className='w-full max-w-sm mx-auto border border-zinc-500 bg-zinc-900 text-zinc-200'>
       <img
         src={`${IMG_BASE_URL}${poster}`}
-        className='object-cover cursor-pointer sm:aspect-[3/4] w-full'
+        className='object-cover cursor-pointer aspect-[3/4] w-full'
         onClick={handleClick}
       />
-      <div className='p-2 flex flex-col gap-2'>
+      <div className='p-3 flex flex-col gap-2 '>
         <p onClick={handleClick} className='font-bold cursor-pointer'>
           {title}
         </p>

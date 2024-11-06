@@ -3,9 +3,9 @@ import Header from './components/Header';
 
 const App = () => {
   return (
-    <section className='flex justify-center'>
+    <section className='flex flex-col h-screen sm:items-center justify-center'>
       <Header />
-      <section className='mt-16 pt-5 flex-grow flex justify-center md:items-center'>
+      <section className='mt-16'>
         <Outlet />
       </section>
     </section>
