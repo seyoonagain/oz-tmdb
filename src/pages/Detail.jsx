@@ -16,11 +16,12 @@ const Detail = () => {
     setMovieDetail(movieDetailData);
   }, []);
   return (
-    <article className='grid grid-cols-1 md:grid-cols-2 max-w-[768px] min-h-[500px] place-items-center gap-7'>
-      <section className='h-full'>
-        <img src={`${IMG_BASE_URL}${poster}`} className='h-full object-cover' />
-      </section>
-      <section className='flex flex-col justify-between h-full p-2'>
+    <article className='grid grid-cols-1 md:grid-cols-2 max-w-[768px] gap-7 md:gap-3'>
+      <img
+        src={`${IMG_BASE_URL}${poster}`}
+        className='object-cover h-full w-full'
+      />
+      <section className='flex flex-col md:justify-between p-3 gap-10'>
         <div className='flex justify-between items-center'>
           <p className='font-bold text-4xl'>{title}</p>
           <p className='text-sm font-semibold'>

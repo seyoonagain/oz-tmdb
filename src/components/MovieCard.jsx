@@ -12,13 +12,11 @@ const MovieCard = ({
   };
   return (
     <article className='border border-zinc-300'>
-      <div className='w-60 sm:w-56 md:w-48 aspect-[3/4] overflow-hidden'>
-        <img
-          src={`${IMG_BASE_URL}${poster}`}
-          className='object-cover w-full h-full cursor-pointer'
-          onClick={handleClick}
-        />
-      </div>
+      <img
+        src={`${IMG_BASE_URL}${poster}`}
+        className='object-cover cursor-pointer sm:aspect-[3/4] w-full'
+        onClick={handleClick}
+      />
       <div className='p-2 flex flex-col gap-2'>
         <p onClick={handleClick} className='font-bold cursor-pointer'>
           {title}
