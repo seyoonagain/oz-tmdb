@@ -1,12 +1,11 @@
 import React, { useEffect, useState } from 'react';
 import MovieCard from '../components/MovieCard';
+import movieListData from '../../data/movieListData.json';
 
 const Home = () => {
   const [movieList, setMovieList] = useState([]);
   useEffect(() => {
-    fetch('/data/movieListData.json')
-      .then((res) => res.json())
-      .then((res) => setMovieList(res.results));
+    setMovieList(movieListData.results);
   }, []);
   return (
     <section className='flex flex-wrap gap-7 justify-center px-5'>

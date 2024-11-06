@@ -1,10 +1,9 @@
 import React, { useEffect, useState } from 'react';
-import { useParams } from 'react-router-dom';
+import movieDetailData from '../../data/movieDetailData.json';
 
 const IMG_BASE_URL = 'https://image.tmdb.org/t/p/w500';
 
 const Detail = () => {
-  const { movieId } = useParams();
   const [movieDetail, setMovieDetail] = useState({});
   const {
     backdrop_path: poster,
@@ -14,9 +13,7 @@ const Detail = () => {
     overview,
   } = movieDetail && movieDetail;
   useEffect(() => {
-    fetch('/data/movieDetailData.json')
-      .then((res) => res.json())
-      .then(setMovieDetail);
+    setMovieDetail(movieDetailData);
   }, []);
   return (
     <article className='grid grid-cols-1 md:grid-cols-2 max-w-[768px] min-h-[500px] place-items-center gap-7'>
