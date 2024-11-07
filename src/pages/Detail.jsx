@@ -1,19 +1,23 @@
 import React, { useEffect, useState } from 'react';
-import movieDetailData from '../../data/movieDetailData.json';
+import TmdbApi from '../api/TmdbApi';
+import { useParams } from 'react-router-dom';
 
 const IMG_BASE_URL = 'https://image.tmdb.org/t/p/w500';
 
 const Detail = () => {
   const [movieDetail, setMovieDetail] = useState({});
+  const { movieId } = useParams();
   useEffect(() => {
-    const {
-      poster_path: poster,
-      title,
-      vote_average: rating,
-      genres,
-      overview,
-    } = movieDetailData;
-    setMovieDetail({ poster, title, rating, genres, overview });
+    TmdbApi.getMovieDetail(movieId).then((res) => {
+      const {
+        poster_path: poster,
+        title,
+        vote_average: rating,
+        genres,
+        overview,
+      } = res;
+      setMovieDetail({ poster, title, rating, genres, overview });
+    });
   }, []);
   return (
     <article className='grid grid-cols-1 md:grid-cols-2 max-w-[768px] gap-7 md:gap-3'>
