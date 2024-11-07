@@ -7,12 +7,12 @@ import 'swiper/css/navigation';
 import 'swiper/css/pagination';
 import 'swiper/css/scrollbar';
 import { Autoplay, Navigation } from 'swiper/modules';
+import TmdbApi from '../api/TmdbApi';
 
 const Home = () => {
   const [movieList, setMovieList] = useState([]);
-
   useEffect(() => {
-    setMovieList(movieListData.results);
+    TmdbApi.getPopularMovieList().then(setMovieList);
   }, []);
   return (
     <div className='mx-auto container'>
