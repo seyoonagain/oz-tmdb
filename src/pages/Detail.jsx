@@ -6,13 +6,14 @@ const IMG_BASE_URL = 'https://image.tmdb.org/t/p/w500';
 const Detail = () => {
   const [movieDetail, setMovieDetail] = useState({});
   const {
-    backdrop_path: poster,
+    poster_path: poster,
     title,
     vote_average: rating,
     genres,
     overview,
   } = movieDetail && movieDetail;
   useEffect(() => {
+    console.log(movieDetailData);
     setMovieDetail(movieDetailData);
   }, []);
   return (

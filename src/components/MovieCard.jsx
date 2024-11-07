@@ -4,7 +4,7 @@ import { useNavigate } from 'react-router-dom';
 const IMG_BASE_URL = 'https://image.tmdb.org/t/p/w500';
 
 const MovieCard = ({
-  movie: { backdrop_path: poster, title, vote_average: rating, id },
+  movie: { poster_path: poster, title, vote_average: rating, id },
 }) => {
   const navigate = useNavigate();
   const handleClick = () => {
