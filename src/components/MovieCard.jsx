@@ -8,7 +8,7 @@ const MovieCard = ({
 }) => {
   const navigate = useNavigate();
   const handleClick = () => {
-    navigate(`/detail/${id}`);
+    navigate(`/details/${id}`);
   };
   return (
     <article className='w-full max-w-sm mx-auto border border-zinc-500 bg-zinc-900 text-zinc-200'>
