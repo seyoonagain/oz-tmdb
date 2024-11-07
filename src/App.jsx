@@ -1,4 +1,4 @@
-import { Outlet, Route, Routes } from 'react-router-dom';
+import { Route, Routes } from 'react-router-dom';
 import Header from './components/Header';
 import NotFound from './pages/NotFound.jsx';
 import Home from './pages/Home.jsx';
@@ -12,7 +12,7 @@ const App = () => {
         <Routes>
           <Route path='/' element={<Home />} />
           <Route path='/details/:movieId' element={<Detail />} />
-          <Route path='/*' element={<NotFound />} />
+          <Route path='*' element={<NotFound />} />
         </Routes>
       </section>
     </section>
