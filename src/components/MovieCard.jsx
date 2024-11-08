@@ -14,8 +14,8 @@ const MovieCard = ({
   return (
     <article
       className={`${
-        banner ? 'w-screen relative' : 'w-full max-w-xs'
-      } mx-auto border border-zinc-900 bg-zinc-900 text-zinc-200`}
+        banner ? 'relative' : 'max-w-xs'
+      } w-full mx-auto border border-zinc-900 bg-zinc-900 text-zinc-200`}
     >
       <img
         src={`${IMG_BASE_URL}${banner ? backdrop_path : poster_path}`}

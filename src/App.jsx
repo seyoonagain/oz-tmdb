@@ -8,9 +8,9 @@ import NavBar from './components/NavBar';
 
 const App = () => {
   return (
-    <section className='flex flex-col h-screen sm:items-center '>
+    <section className='flex flex-col sm:items-center h-screen '>
       <NavBar />
-      <section className='mt-16 h-full w-full'>
+      <section className='mt-16 h-full w-full overflow-auto'>
         <Routes>
           <Route path='/' element={<Home />} />
           <Route path='/details/:movieId' element={<Detail />} />

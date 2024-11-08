@@ -28,7 +28,7 @@ const InfiniteScrollMovies = () => {
             <MovieCard movie={movie} key={movie.id} />
           ))}
       </section>
-      <div ref={ref}></div>
+      <div className='h-5' ref={ref}></div>
     </>
   );
 };

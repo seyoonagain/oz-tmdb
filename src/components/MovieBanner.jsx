@@ -11,7 +11,7 @@ const MovieBanner = () => {
     TmdbApi.getPopularMovieList().then(setMovieList);
   }, []);
   return (
-    <div className='mx-auto w-screen'>
+    <div className='mx-auto w-full'>
       <Swiper
         slidesPerView={1}
         spaceBetween={20}
