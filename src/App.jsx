@@ -10,7 +10,7 @@ const App = () => {
   return (
     <section className='flex flex-col h-screen sm:items-center '>
       <NavBar />
-      <section className='mt-16 h-full'>
+      <section className='mt-16 h-full w-full'>
         <Routes>
           <Route path='/' element={<Home />} />
           <Route path='/details/:movieId' element={<Detail />} />

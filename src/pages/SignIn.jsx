@@ -3,7 +3,7 @@ import Input from '../components/ui/Input';
 
 const SignIn = () => {
   return (
-    <div className='h-full flex items-center'>
+    <div className='h-full w-full flex items-center justify-center'>
       <section className='border border-zinc-300 rounded-xl px-10 py-7'>
         <h2 className='text-xl font-bold mb-10'>Login</h2>
         <form className='flex flex-col gap-3'>
