@@ -20,7 +20,7 @@ const Detail = () => {
     });
   }, []);
   return (
-    <div className='h-screen flex items-center'>
+    <div className='h-full w-full flex items-center justify-center'>
       <article className='grid grid-cols-1 md:grid-cols-2 max-w-[768px] gap-7 md:gap-3'>
         <img
           src={`${IMG_BASE_URL}${movieDetail.poster}`}
