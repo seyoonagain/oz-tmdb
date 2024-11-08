@@ -5,3 +5,7 @@
 * {
   @apply box-border m-0 p-0;
 }
+
+:root {
+  @apply bg-zinc-950 text-zinc-100;
+}

@@ -4,7 +4,7 @@ class TmdbApi {
   constructor() {
     this.httpClient = axios.create({
       baseURL: import.meta.env.VITE_API_BASE_URL,
-      params: { api_key: import.meta.env.VITE_API_KEY },
+      params: { api_key: import.meta.env.VITE_API_KEY, language: 'ko' },
     });
   }
 
@@ -26,6 +26,18 @@ class TmdbApi {
           accept: 'application/json',
           Authorization: `Bearer ${import.meta.env.VITE_API_ACCESS_TOKEN_AUTH}`,
         },
+      })
+      .then((res) => res.data);
+  }
+
+  async getTopRatedMovieList(page) {
+    return await this.httpClient
+      .get('/top_rated', {
+        headers: {
+          accept: 'application/json',
+          Authorization: `Bearer ${import.meta.env.VITE_API_ACCESS_TOKEN_AUTH}`,
+        },
+        params: { page },
       })
       .then((res) => res.data);
   }
