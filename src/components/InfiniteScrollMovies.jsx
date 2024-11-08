@@ -4,7 +4,7 @@ import TmdbApi from '../api/TmdbApi';
 import MovieCard from './MovieCard';
 
 const InfiniteScrollMovies = () => {
-  const { ref, inView, entry } = useInView({
+  const { ref, inView } = useInView({
     threshold: 0,
   });
   const [topRatedMovies, setTopRatedMovies] = useState([]);
@@ -28,7 +28,7 @@ const InfiniteScrollMovies = () => {
             <MovieCard movie={movie} key={movie.id} />
           ))}
       </section>
-      <div ref={ref}></div>;
+      <div ref={ref}></div>
     </>
   );
 };
