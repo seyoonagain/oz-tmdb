@@ -7,5 +7,6 @@
 }
 
 :root {
-  @apply bg-zinc-950 text-zinc-100 w-screen;
+  @apply w-screen;
+  @apply dark:bg-zinc-950 dark:text-zinc-100 bg-zinc-100 text-zinc-950;
 }

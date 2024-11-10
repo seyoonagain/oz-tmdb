@@ -10,7 +10,7 @@ class TmdbApi {
 
   async getPopularMovieList() {
     return await this.httpClient
-      .get('/popular', {
+      .get('/movie/popular', {
         headers: {
           accept: 'application/json',
           Authorization: `Bearer ${import.meta.env.VITE_API_ACCESS_TOKEN_AUTH}`,
@@ -21,7 +21,7 @@ class TmdbApi {
 
   async getMovieDetail(movieId) {
     return await this.httpClient
-      .get(`${movieId}`, {
+      .get(`/movie/${movieId}`, {
         headers: {
           accept: 'application/json',
           Authorization: `Bearer ${import.meta.env.VITE_API_ACCESS_TOKEN_AUTH}`,
@@ -32,12 +32,24 @@ class TmdbApi {
 
   async getTopRatedMovieList(page) {
     return await this.httpClient
-      .get('/top_rated', {
+      .get('/movie/top_rated', {
         headers: {
           accept: 'application/json',
           Authorization: `Bearer ${import.meta.env.VITE_API_ACCESS_TOKEN_AUTH}`,
         },
         params: { page },
+      })
+      .then((res) => res.data);
+  }
+
+  async searchMovies(query, page) {
+    return await this.httpClient
+      .get('/search/movie', {
+        headers: {
+          accept: 'application/json',
+          Authorization: `Bearer ${import.meta.env.VITE_API_ACCESS_TOKEN_AUTH}`,
+        },
+        params: { query, page },
       })
       .then((res) => res.data);
   }

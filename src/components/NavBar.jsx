@@ -1,37 +1,54 @@
 import React, { useState } from 'react';
-import { Link, useNavigate } from 'react-router-dom';
+import { Link, useLocation, useNavigate } from 'react-router-dom';
 import Button from './ui/Button';
-import { Menu } from 'lucide-react';
+import { Menu, Moon, Sun } from 'lucide-react';
 import DropdownMenu from './ui/DropdownMenu';
+import SearchInput from './SearchInput';
+import { useDarkMode } from '../contexts/darkModeContext';
+import useOutsideClick from '../hooks/useOutsideClick';
 
-const NavBar = () => {
+const NavBar = ({ isHeaderBackgroundTransparent }) => {
   const navigate = useNavigate();
+  const location = useLocation();
+  const [showInput, setShowInput] = useState(false);
   const [showDropdown, setShowDropdown] = useState(false);
+  const { darkMode, toggleDarkMode } = useDarkMode();
+  const ref = useOutsideClick(() => setShowDropdown(false));
   const handleDropdownClick = (url) => {
     navigate(url);
     setShowDropdown(false);
   };
+
   return (
-    <header className='fixed top-0 left-0 bg-zinc-950 border-b border-zinc-900 z-50 w-full h-16 px-5 content-center flex justify-between items-center'>
-      <Link to='/' className='cursor-pointer'>
-        <h1 className='text-3xl font-bold'>OZ TMDB</h1>
+    <header
+      className={`fixed top-0 left-0 ${
+        isHeaderBackgroundTransparent && !location.pathname.includes('/s')
+          ? 'bg-gradient-to-b from-[rgba(0,0,0,0.8)] to-transparent bg-opacity-25'
+          : 'bg-zinc-950'
+      } transition-all duration-700 ease-in-out z-50 w-full h-16 px-5 flex justify-between items-center`}
+    >
+      <Link
+        to='/'
+        className={`cursor-pointer ${showInput ? 'hidden sm:block' : 'block'}`}
+      >
+        <h1 className='text-3xl font-bold text-red-700'>OZ TMDB</h1>
       </Link>
-      <nav>
-        <ul className='hidden sm:flex sm:gap-7'>
-          <li>
-            <Button text='회원가입' onClick={() => navigate('/sign-up')} />
-          </li>
-          <li>
-            <Button text='로그인' onClick={() => navigate('/sign-in')} />
-          </li>
-        </ul>
-        <div className='relative sm:hidden'>
+      <nav className='flex gap-5 items-center text-zinc-100'>
+        <SearchInput showInput={showInput} setShowInput={setShowInput} />
+        <button onClick={() => toggleDarkMode()}>
+          {darkMode ? <Sun size={20} /> : <Moon size={20} />}
+        </button>
+        <div className={`relative ${showInput ? 'hidden sm:block' : 'block'}`}>
           <Menu
+            size={20}
             className='cursor-pointer'
             onClick={() => setShowDropdown((prev) => !prev)}
           />
           {showDropdown && (
-            <section className='flex flex-col gap-2 absolute top-10 right-0 bg-zinc-900 w-24'>
+            <section
+              ref={ref}
+              className='flex flex-col absolute top-11 right-0 bg-zinc-200 text-zinc-950 dark:text-zinc-100 dark:bg-zinc-900 w-24'
+            >
               <DropdownMenu
                 text='회원가입'
                 onClick={() => handleDropdownClick('/sign-up')}

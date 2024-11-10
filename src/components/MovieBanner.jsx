@@ -14,7 +14,7 @@ const MovieBanner = () => {
     <div className='mx-auto w-full'>
       <Swiper
         slidesPerView={1}
-        spaceBetween={20}
+        spaceBetween={0}
         navigation
         modules={[Autoplay]}
         autoplay={{

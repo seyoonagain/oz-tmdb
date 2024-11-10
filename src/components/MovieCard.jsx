@@ -20,25 +20,24 @@ const MovieCard = ({
       <img
         src={`${IMG_BASE_URL}${banner ? backdrop_path : poster_path}`}
         className={`${
-          banner ? 'aspect-[16/9] w-full' : 'aspect-[3/5]'
+          banner ? 'aspect-[16/9] w-full' : 'aspect-[2/3]'
         } object-cover cursor-pointer `}
         onClick={handleClick}
       />
       <div
         className={`${
-          banner ? 'absolute bottom-10 left-0 pl-7' : 'justify-center p-3'
+          banner
+            ? 'absolute bottom-20 left-0 pl-7'
+            : 'hidden justify-center p-3'
         } flex flex-col gap-2 `}
       >
         <p
           onClick={handleClick}
           className={`${
-            banner ? 'text-4xl' : 'text-xl'
+            banner ? 'text-4xl md:text-6xl' : 'text-xl'
           } font-bold cursor-pointer line-clamp-1`}
         >
           {title}
-        </p>
-        <p className={`${banner ? 'hidden' : 'text-sm'}`}>
-          평점: {Math.round(rating * 10) / 10}
         </p>
       </div>
     </article>
