@@ -4,7 +4,7 @@ import Button from './ui/Button';
 import { Menu, Moon, Sun } from 'lucide-react';
 import DropdownMenu from './ui/DropdownMenu';
 import SearchInput from './SearchInput';
-import { useDarkMode } from '../contexts/darkModeContext';
+import { useDarkMode } from '../contexts/DarkModeContext';
 import useOutsideClick from '../hooks/useOutsideClick';
 
 const NavBar = ({ isHeaderBackgroundTransparent }) => {
