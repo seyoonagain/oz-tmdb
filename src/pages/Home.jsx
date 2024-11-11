@@ -18,11 +18,14 @@ const Home = () => {
   return (
     <section className='flex flex-col items-center gap-10 overflow-auto'>
       <MovieBanner />
-      <InfiniteScrollMovies
-        setPage={setPage}
-        lastPage={lastPage}
-        movieList={topRatedMovies}
-      />
+      <div className='px-7'>
+        <p className='font-dePixel font-bold w-full mb-3'>Top Rated Movies</p>
+        <InfiniteScrollMovies
+          setPage={setPage}
+          lastPage={lastPage}
+          movieList={topRatedMovies}
+        />
+      </div>
     </section>
   );
 };

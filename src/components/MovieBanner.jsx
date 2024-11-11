@@ -4,6 +4,7 @@ import { Swiper, SwiperSlide } from 'swiper/react';
 import { Autoplay } from 'swiper/modules';
 import 'swiper/css';
 import TmdbApi from '../api/TmdbApi';
+import MovieBannerCard from './MovieBannerCard';
 
 const MovieBanner = () => {
   const [movieList, setMovieList] = useState([]);
@@ -13,12 +14,12 @@ const MovieBanner = () => {
   return (
     <div className='mx-auto w-full'>
       <Swiper
-        slidesPerView={1}
-        spaceBetween={0}
+        slidesPerView={2}
+        spaceBetween={-1}
         navigation
         modules={[Autoplay]}
         autoplay={{
-          delay: 2500,
+          delay: 3000,
           disableOnInteraction: false,
         }}
         loop
@@ -26,7 +27,7 @@ const MovieBanner = () => {
         {movieList &&
           movieList.map((movie) => (
             <SwiperSlide key={movie.id}>
-              <MovieCard movie={movie} banner={true} />
+              <MovieBannerCard movie={movie} />
             </SwiperSlide>
           ))}
       </Swiper>

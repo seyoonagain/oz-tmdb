@@ -2,14 +2,10 @@ import { Search } from 'lucide-react';
 import React, { useState } from 'react';
 import useOutsideClick from '../hooks/useOutsideClick';
 import useDebounce from '../hooks/useDebounce';
+import searchIcon from '../assets/searchIcon.png';
 
-const SearchInput = ({ showInput, setShowInput }) => {
+const SearchInput = () => {
   const { handleDebounceQueryChange } = useDebounce();
-  const ref = useOutsideClick(() => {
-    ref.current.value = '';
-    setShowInput(false);
-  });
-  const toggleInputVisibility = () => setShowInput(!showInput);
   const handleSubmit = (e) => {
     e.preventDefault();
   };
@@ -17,24 +13,15 @@ const SearchInput = ({ showInput, setShowInput }) => {
     <>
       <form
         onSubmit={handleSubmit}
-        className={`${
-          showInput && 'border border-zinc-300'
-        } flex items-center relative`}
+        className='flex items-center relative font-chicago'
       >
         <input
           onChange={handleDebounceQueryChange}
-          ref={ref}
           placeholder='Titles'
-          className={`${
-            showInput ? 'block w-64 bg-opacity-75' : 'bg-opacity-0 w-0'
-          } outline-none bg-zinc-950 h-8 pl-9 transition-all duration-500 placeholder:text-sm`}
+          className='w-52 text-lg px-2 border-b border-zinc-950 bg-transparent outline-none h-5'
         />
-        <button
-          type='button'
-          onClick={toggleInputVisibility}
-          className={`${showInput && 'absolute left-2'}`}
-        >
-          <Search size={20} />
+        <button type='button' className='shrink-0'>
+          <img src={searchIcon} className='size-5' />
         </button>
       </form>
     </>

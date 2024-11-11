@@ -4,7 +4,7 @@ class TmdbApi {
   constructor() {
     this.httpClient = axios.create({
       baseURL: import.meta.env.VITE_API_BASE_URL,
-      params: { api_key: import.meta.env.VITE_API_KEY, language: 'ko' },
+      params: { api_key: import.meta.env.VITE_API_KEY },
     });
   }
 
