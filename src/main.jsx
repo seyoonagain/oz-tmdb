@@ -3,11 +3,14 @@ import './index.css';
 import App from './App.jsx';
 import { BrowserRouter } from 'react-router-dom';
 import DarkModeContextProvider from './contexts/DarkModeContext.jsx';
+import AuthContextProvider from './contexts/AuthContext.jsx';
 
 createRoot(document.getElementById('root')).render(
   <BrowserRouter>
     <DarkModeContextProvider>
-      <App />
+      <AuthContextProvider>
+        <App />
+      </AuthContextProvider>
     </DarkModeContextProvider>
   </BrowserRouter>
 );

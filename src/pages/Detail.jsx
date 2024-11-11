@@ -22,18 +22,12 @@ const Detail = () => {
   }, []);
   return (
     <div className='h-full w-full flex items-center justify-center relative mt-20 md:mt-0'>
-      <section className='fixed top-0 left-0 w-full h-full -z-1 bg-zinc-950'>
-        <img
-          src={`${IMG_BASE_URL}${movieDetail.backdrop}`}
-          className='w-full brightness-50 blur-xl object-cover'
-        />
-      </section>
       <article className='z-10 grid grid-cols-1 md:grid-cols-2 place-items-center max-w-[768px] gap-7 md:gap-3'>
         <img
           src={`${IMG_BASE_URL}${movieDetail.poster}`}
           className='object-cover border border-zinc-950 rounded-2xl'
         />
-        <section className='flex flex-col md:justify-center p-3 gap-10 text-zinc-100'>
+        <section className='flex flex-col md:justify-center p-3 gap-10'>
           <div className='flex justify-between items-center'>
             <p className='font-bold text-3xl'>{movieDetail.title}</p>
             <p className='text-sm font-semibold shrink-0'>

@@ -33,13 +33,13 @@ const Search = () => {
     });
   }, [page]);
   return (
-    <section className='mt-20'>
+    <>
       <InfiniteScrollMovies
         setPage={setPage}
         lastPage={lastPage}
         movieList={searchResults}
       />
-    </section>
+    </>
   );
 };
 

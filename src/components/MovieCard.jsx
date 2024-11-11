@@ -17,13 +17,13 @@ const MovieCard = ({
         banner ? 'relative' : 'max-w-xs'
       } w-full mx-auto border border-zinc-900 bg-zinc-900 text-zinc-200`}
     >
-      <img
-        src={`${IMG_BASE_URL}${banner ? backdrop_path : poster_path}`}
-        className={`${
-          banner ? 'aspect-[16/9] w-full' : 'aspect-[2/3]'
-        } object-cover cursor-pointer `}
-        onClick={handleClick}
-      />
+      <div className='relative'>
+        <img
+          src={`${IMG_BASE_URL}${banner ? backdrop_path : poster_path}`}
+          className='aspect-[2/3] object-cover cursor-pointer saturate-0'
+          onClick={handleClick}
+        />
+      </div>
       <div
         className={`${
           banner
