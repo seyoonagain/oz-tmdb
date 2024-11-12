@@ -20,7 +20,7 @@ const MovieBannerCard = ({
         />
       </div>
       <div className='w-full text-center'>
-        <p className='text-[12px] bg-zinc-950 font-bold cursor-pointer font-dePixel tracking-tight'>
+        <p className='text-[12px] bg-zinc-950 font-bold cursor-pointer font-dePixel tracking-tight line-clamp-1'>
           {title}
         </p>
       </div>
