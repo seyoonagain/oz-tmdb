@@ -68,7 +68,7 @@ const Detail = () => {
             {movieDetail.genres &&
               movieDetail.genres.map((genre) => (
                 <li
-                  className='border border-zinc-500 rounded-xl px-2 bg-zinc-100 text-zinc-950'
+                  className='border border-zinc-500 rounded-xl px-2 bg-zinc-100 text-zinc-950 flex text-center items-center tracking-tight'
                   key={genre.id}
                 >
                   {genre.name}
