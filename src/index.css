@@ -27,7 +27,7 @@
 }
 
 :root {
-  @apply w-screen bg-zinc-300 dark:bg-zinc-500;
+  @apply w-screen bg-yellow-200 dark:bg-blue-950;
   background-image: radial-gradient(circle, #000000 0.5px, transparent 0.5px);
   background-size: 3px 3px;
 }

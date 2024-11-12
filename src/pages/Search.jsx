@@ -33,13 +33,19 @@ const Search = () => {
     });
   }, [page]);
   return (
-    <>
+    <section className='px-7 pt-5'>
+      <p className='font-dePixel font-bold w-full mb-3'>Search Results</p>
+      {searchResults.length === 0 && (
+        <p className='font-dePixel text-sm w-full text-center mt-10'>
+          No Movie Found
+        </p>
+      )}
       <InfiniteScrollMovies
         setPage={setPage}
         lastPage={lastPage}
         movieList={searchResults}
       />
-    </>
+    </section>
   );
 };
 

@@ -2,7 +2,7 @@ import { Search } from 'lucide-react';
 import React, { useState } from 'react';
 import useOutsideClick from '../hooks/useOutsideClick';
 import useDebounce from '../hooks/useDebounce';
-import searchIcon from '../assets/searchIcon.png';
+import searchIcon from '../assets/search-icon.png';
 
 const SearchInput = () => {
   const { handleDebounceQueryChange } = useDebounce();

@@ -2,22 +2,22 @@ import { supabase } from './SupabaseClient';
 
 export const signUp = async (userData) => {
   const { email, password, display_name } = userData;
-  return await supabase.auth.signUp({
+  const { error } = await supabase.auth.signUp({
     email,
     password,
     options: { data: { display_name } },
   });
-  // .then((res) => res.data);
+  if (error) throw new Error(error);
 };
 
 export const signIn = async (signInData) => {
   const { email, password } = signInData;
-  return await supabase.auth
-    .signInWithPassword({
-      email,
-      password,
-    })
-    .then((res) => res.data);
+  const { data, error } = await supabase.auth.signInWithPassword({
+    email,
+    password,
+  });
+  if (error) throw new Error(error);
+  if (data) return data;
 };
 
 export const signOut = async () => {

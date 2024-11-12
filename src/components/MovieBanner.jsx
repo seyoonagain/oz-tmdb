@@ -1,5 +1,4 @@
 import React, { useEffect, useState } from 'react';
-import MovieCard from './MovieCard';
 import { Swiper, SwiperSlide } from 'swiper/react';
 import { Autoplay } from 'swiper/modules';
 import 'swiper/css';
@@ -14,8 +13,8 @@ const MovieBanner = () => {
   return (
     <div className='mx-auto w-full'>
       <Swiper
-        slidesPerView={2}
-        spaceBetween={-1}
+        slidesPerView={1}
+        spaceBetween={0}
         navigation
         modules={[Autoplay]}
         autoplay={{
@@ -23,6 +22,24 @@ const MovieBanner = () => {
           disableOnInteraction: false,
         }}
         loop
+        breakpoints={{
+          320: {
+            slidesPerView: 1,
+            spaceBetween: 0,
+          },
+          640: {
+            slidesPerView: 2,
+            spaceBetween: 0,
+          },
+          1024: {
+            slidesPerView: 3,
+            spaceBetween: 0,
+          },
+          1248: {
+            slidesPerView: 4,
+            spaceBetween: 0,
+          },
+        }}
       >
         {movieList &&
           movieList.map((movie) => (

@@ -21,31 +21,36 @@ const Detail = () => {
     });
   }, []);
   return (
-    <div className='h-full w-full flex items-center justify-center relative mt-20 md:mt-0'>
-      <article className='z-10 grid grid-cols-1 md:grid-cols-2 place-items-center max-w-[768px] gap-7 md:gap-3'>
-        <img
-          src={`${IMG_BASE_URL}${movieDetail.poster}`}
-          className='object-cover border border-zinc-950 rounded-2xl'
-        />
-        <section className='flex flex-col md:justify-center p-3 gap-10'>
+    <div className='flex items-center justify-center min-h-full p-5'>
+      <article className='grid grid-cols-1 lg:grid-cols-2 place-items-center max-w-[768px] gap-7 lg:gap-3'>
+        <div className='relative'>
+          <img
+            src={`${IMG_BASE_URL}${movieDetail.poster}`}
+            className='object-cover border border-zinc-950 rounded-2xl saturate-0'
+          />
+        </div>
+
+        <section className='flex flex-col lg:justify-center p-3 gap-10 max-w-md'>
           <div className='flex justify-between items-center'>
-            <p className='font-bold text-3xl'>{movieDetail.title}</p>
-            <p className='text-sm font-semibold shrink-0'>
-              평점: {Math.round(movieDetail.rating * 10) / 10}
+            <p className='font-bold font-dePixel text-lg'>
+              {movieDetail.title}
+            </p>
+            <p className='font-semibold shrink-0 font-chicago'>
+              ★ {Math.round(movieDetail.rating * 10) / 10}
             </p>
           </div>
           <ul className='flex list-none gap-3 justify-center'>
             {movieDetail.genres &&
               movieDetail.genres.map((genre) => (
                 <li
-                  className='border border-zinc-300 rounded-xl px-2 text-xs'
+                  className='border border-zinc-500 rounded-xl px-2 font-chicago text-sm bg-zinc-100 text-zinc-950'
                   key={genre.id}
                 >
                   {genre.name}
                 </li>
               ))}
           </ul>
-          <p className='leading-8 text-sm text-justify'>
+          <p className='leading-8 text-lg text-justify font-chicago'>
             {movieDetail.overview}
           </p>
         </section>

@@ -12,12 +12,12 @@ import MyList from './pages/MyList.jsx';
 
 const App = () => {
   return (
-    <section className='relative flex flex-col items-center justify-center h-screen overflow-auto'>
+    <section className='relative flex flex-col items-center justify-center h-screen w-screen'>
       <MenuBar />
-      <section className='relative mt-10 mb-3 h-11/12 w-11/12 sm:w-4/5 sm:h-4/5 bg-zinc-100 overflow-auto border border-zinc-950 flex flex-col'>
+      <section className='relative mt-10 mb-3 h-5/6 w-5/6 sm:w-4/5 sm:h-4/5 bg-zinc-100 border border-zinc-950 flex flex-col overflow-auto'>
         <TitleBar />
         <ToolBar />
-        <section className='flex-grow bg-zinc-100 dark:bg-zinc-950 text-zinc-950 dark:text-zinc-100'>
+        <section className='flex-grow bg-zinc-200 dark:bg-zinc-900 text-zinc-950 dark:text-zinc-100 overflow-auto'>
           <Routes>
             <Route path='/' element={<Home />} />
             <Route path='/details/:movieId' element={<Detail />} />

@@ -1,23 +1,25 @@
 import { z } from 'zod';
 
+const PASSWORD_REGEXP =
+  /^(?=.*[A-Za-z])(?=.*\d)(?=.*[@$!%*?&-])[A-Za-z\d@$!%*?&-]{8,15}$/;
+const EMAIL_REGEXP = /^[\w.-]+@[a-zA-Z\d.-]+\.[a-zA-Z]{2,}$/;
+
 const EMAIL_SCHEMA = {
   email: z
     .string()
     .trim()
-    .nonempty({ message: 'Enter your email.' })
-    .email({ message: '이메일 주소를 확인해 주세요.' }),
+    .nonempty({ message: 'Please enter your email.' })
+    .regex(EMAIL_REGEXP, { message: 'Please check your email' })
+    .email({ message: 'Please check your email address.' }),
 };
-
-const PASSWORD_REGEXP =
-  /^(?=.*[A-Za-z])(?=.*\d)(?=.*[@$!%*?&-])[A-Za-z\d@$!%*?&-]{8,15}$/g;
 
 export const SIGN_IN_SCHEMA = z.object({
   ...EMAIL_SCHEMA,
   password: z
     .string()
     .trim()
-    .nonempty('비밀번호를 입력해 주세요.')
-    .regex(PASSWORD_REGEXP, { message: '비밀번호를 확인해 주세요.' }),
+    .nonempty('Please enter your password.')
+    .regex(PASSWORD_REGEXP, { message: 'Please check your password.' }),
 });
 
 export const SIGN_UP_SCHEMA = z
@@ -26,19 +28,19 @@ export const SIGN_UP_SCHEMA = z
     username: z
       .string()
       .trim()
-      .nonempty({ message: '이메일 주소를 입력해주세요.' }),
+      .nonempty({ message: 'Please enter your username.' }),
     password: z
       .string()
       .trim()
-      .nonempty('비밀번호를 입력해주세요.')
-      .regex(PASSWORD_REGEXP, { message: '비밀번호를 확인해주세요.' }),
+      .nonempty('Please enter your password.')
+      .regex(PASSWORD_REGEXP, { message: 'Please check your password' }),
     confirmPassword: z
       .string()
       .trim()
-      .nonempty('비밀번호를 입력해주세요.')
-      .regex(PASSWORD_REGEXP, { message: '비밀번호를 확인해주세요.' }),
+      .nonempty('Please enter your password.')
+      .regex(PASSWORD_REGEXP, { message: 'Please check your password' }),
   })
   .refine((data) => data.password === data.confirmPassword, {
-    message: '비밀번호가 일치하지 않습니다',
-    path: ['confirmedPassword'],
+    message: 'Passwords do not match.',
+    path: ['confirmPassword'],
   });

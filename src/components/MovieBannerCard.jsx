@@ -19,14 +19,11 @@ const MovieBannerCard = ({
           onClick={handleClick}
         />
       </div>
-      {/* <div className='absolute bottom-5'>
-        <p
-          onClick={handleClick}
-          className='text-[10px] bg-zinc-950 font-bold cursor-pointer font-dePixel text-center'
-        >
+      <div className='w-full text-center'>
+        <p className='text-[12px] bg-zinc-950 font-bold cursor-pointer font-dePixel tracking-tight'>
           {title}
         </p>
-      </div> */}
+      </div>
     </article>
   );
 };
