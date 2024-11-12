@@ -26,7 +26,7 @@ const BookmarkIcon = ({
   useEffect(() => {
     isInBookmarks({ user_id, movie_id }).then((res) => {
       setIsBookmarked(res.length === 1);
-      res.length === 1 && setId(res.id);
+      res.length === 1 && setId(res[0].id);
     });
   }, []);
   return (

@@ -19,7 +19,11 @@ const MyList = () => {
       <section className='max-w-screen-3xl place-items-center grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 xl:grid-cols-5 2xl:grid-cols-6 gap-5'>
         {bookmarks &&
           bookmarks.map((movie) => (
-            <MovieCard poster={movie.poster} id={movie.movie_id} />
+            <MovieCard
+              poster={movie.poster}
+              id={movie.movie_id}
+              key={movie.id}
+            />
           ))}
       </section>
     </div>
