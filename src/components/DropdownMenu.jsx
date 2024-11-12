@@ -11,7 +11,7 @@ const DropdownMenu = ({ setShowDropdown }) => {
   const ref = useOutsideClick(() => setShowDropdown(false));
   const handleMenuClick = (url) => {
     url && navigate(url);
-    !url && signOut();
+    !url && signOut().then(() => navigate('/'));
     setShowDropdown(false);
   };
   useEffect(() => {
