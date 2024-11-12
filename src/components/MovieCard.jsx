@@ -17,7 +17,7 @@ const MovieCard = ({ poster, id }) => {
       <div className='relative'>
         <img
           src={`${poster ? IMG_BASE_URL + poster : error}`}
-          className='aspect-[2/3] object-cover cursor-pointer saturate-0 mx-auto'
+          className='aspect-[2/3] object-cover cursor-pointer saturate-0 mx-auto hover:saturate-50'
         />
       </div>
     </article>

@@ -47,7 +47,7 @@ const Detail = () => {
           />
           <img
             src={`${IMG_BASE_URL}${movieDetail.poster}`}
-            className='object-cover border border-zinc-950 saturate-0'
+            className='object-cover border border-zinc-950 saturate-0 hover:saturate-100'
           />
         </div>
         <section className='flex flex-col lg:justify-center p-3 gap-10 max-w-md'>

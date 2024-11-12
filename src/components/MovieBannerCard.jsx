@@ -15,7 +15,7 @@ const MovieBannerCard = ({
       <div className='flex justify-center'>
         <img
           src={`${IMG_BASE_URL}${backdrop_path}`}
-          className='object-cover cursor-pointer saturate-0'
+          className='object-cover cursor-pointer saturate-0 hover:saturate-50'
           onClick={handleClick}
         />
       </div>
