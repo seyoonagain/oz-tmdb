@@ -4,9 +4,8 @@ export default {
   content: ['./index.html', './src/**/*.{js,jsx}'],
   theme: {
     fontFamily: {
-      dePixel: ['DePixel', 'sans-serif'],
+      dePixel: ['DePixel', 'DungGeunMo'],
       chicago: ['Chicago', 'DOSIyagiMedium'],
-      monaco: ['Monaco', 'monospace'],
     },
     extend: {},
   },

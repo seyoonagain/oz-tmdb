@@ -1,5 +1,10 @@
 import React, { createContext, useContext, useEffect, useState } from 'react';
-import { onUserStateChange, signIn, signOut, signUp } from '../api/SupabaseApi';
+import {
+  onUserStateChange,
+  signIn,
+  signOut,
+  signUp,
+} from '../api/SupabaseAuth';
 
 const AuthContext = createContext();
 
@@ -17,9 +22,17 @@ const AuthContextProvider = ({ children }) => {
       );
     } else setUsername(null);
   }, [user]);
+
   return (
     <AuthContext.Provider
-      value={{ user: user?.user_metadata, username, signIn, signOut, signUp }}
+      value={{
+        user: user?.user_metadata,
+        username,
+        user_id: user?.id,
+        signIn,
+        signOut,
+        signUp,
+      }}
     >
       {children}
     </AuthContext.Provider>

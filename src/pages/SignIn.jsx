@@ -1,13 +1,13 @@
 import React, { useState } from 'react';
 import { Link, useNavigate } from 'react-router-dom';
 import { useAuthContext } from '../contexts/AuthContext';
-import { socialSignIn } from '../api/SocialAuth';
 import { useForm } from 'react-hook-form';
 import { zodResolver } from '@hookform/resolvers/zod';
 import { SIGN_IN_SCHEMA } from '../lib/schemas';
 import { SIGN_IN_INPUT_ELEMENTS } from '../lib/constants';
 import Alert from '../components/Alert';
 import SubmitButton from '../components/ui/\bSubmitButton';
+import { socialSignIn } from '../api/SupabaseAuth';
 
 const SignIn = () => {
   const {

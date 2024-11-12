@@ -3,9 +3,9 @@ import bomb from '../assets/bomb.png';
 
 const Alert = ({ errorMessage, setErrorMessage }) => {
   return (
-    <section className='absolute top-1/2 -translate-y-1/2 p-5 h-36 bg-zinc-100 border border-zinc-950 font-chicago flex flex-col '>
+    <section className='z-50 absolute top-1/2 -translate-y-1/2 p-5 h-36 bg-zinc-100 border border-zinc-950 font-chicago flex flex-col '>
       <div className='flex gap-4'>
-        <img src={bomb} />
+        <img src={bomb} className='size-12' />
         <p>{errorMessage}</p>
       </div>
       <button

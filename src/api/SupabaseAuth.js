@@ -24,7 +24,14 @@ export const signOut = async () => {
   await supabase.auth.signOut();
 };
 
-export const getUser = async () => await supabase.auth.getUser();
+export const socialSignIn = async (provider) => {
+  return await supabase.auth.signInWithOAuth({
+    provider,
+    option: {
+      redirectTo: 'https://kddzsnnyysbucocosnke.supabase.co/auth/v1/callback',
+    },
+  });
+};
 
 export const onUserStateChange = async (callback) => {
   return supabase.auth.onAuthStateChange((event, session) => {

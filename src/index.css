@@ -6,15 +6,16 @@
   font-style: normal;
 }
 @font-face {
-  font-family: 'Monaco';
-  src: url('/fonts/Monaco.ttf') format('truetype');
+  font-family: 'DOSIyagiMedium';
+  src: url('https://fastly.jsdelivr.net/gh/projectnoonnu/noonfonts_2304-2@1.0/DOSIyagiMedium.woff2')
+    format('woff2');
   font-weight: normal;
   font-style: normal;
 }
 @font-face {
-  font-family: 'DOSIyagiMedium';
-  src: url('https://fastly.jsdelivr.net/gh/projectnoonnu/noonfonts_2304-2@1.0/DOSIyagiMedium.woff2')
-    format('woff2');
+  font-family: 'DungGeunMo';
+  src: url('https://fastly.jsdelivr.net/gh/projectnoonnu/noonfonts_six@1.2/DungGeunMo.woff')
+    format('woff');
   font-weight: normal;
   font-style: normal;
 }
