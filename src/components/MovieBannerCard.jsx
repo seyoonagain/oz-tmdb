@@ -15,12 +15,12 @@ const MovieBannerCard = ({
       <div className='flex justify-center'>
         <img
           src={`${IMG_BASE_URL}${backdrop_path}`}
-          className='object-cover cursor-pointer saturate-0 hover:saturate-50'
+          className='object-cover cursor-pointer saturate-0 hover:saturate-50 w-full'
           onClick={handleClick}
         />
       </div>
       <div className='w-full text-center'>
-        <p className='text-[12px] bg-zinc-950 font-bold cursor-pointer font-dePixel tracking-tight line-clamp-1'>
+        <p className='bg-zinc-950 font-bold cursor-pointer font-dePixel tracking-tight line-clamp-1 py-1'>
           {title}
         </p>
       </div>
